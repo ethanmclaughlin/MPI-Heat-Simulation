@@ -1,0 +1,16 @@
+﻿  TempSimulator.cpp
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(199): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(201): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(203): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(212): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(215): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(218): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(221): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(229): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(111): warning C4101: 'P4Temp': unreferenced local variable
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(108): warning C4101: 'P1Temp': unreferenced local variable
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(112): warning C4101: 'P5Temp': unreferenced local variable
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(110): warning C4101: 'P3Temp': unreferenced local variable
+c:\users\reynolds\documents\visual studio 2015\projects\parallel progarmming\parallel progarmming\tempsimulator.cpp(109): warning C4101: 'P2Temp': unreferenced local variable
+  Parallel Progarmming.vcxproj -> C:\Users\Reynolds\documents\visual studio 2015\Projects\Parallel Progarmming\Debug\Parallel Progarmming.exe
+  Parallel Progarmming.vcxproj -> C:\Users\Reynolds\documents\visual studio 2015\Projects\Parallel Progarmming\Debug\Parallel Progarmming.pdb (Partial PDB)
