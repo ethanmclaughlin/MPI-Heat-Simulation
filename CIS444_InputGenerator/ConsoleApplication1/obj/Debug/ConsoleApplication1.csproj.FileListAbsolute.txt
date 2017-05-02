@@ -4,3 +4,6 @@ c:\users\ethan\documents\visual studio 2015\Projects\ConsoleApplication1\Console
 c:\users\ethan\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.csprojResolveAssemblyReference.cache
 c:\users\ethan\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 c:\users\ethan\documents\visual studio 2015\Projects\ConsoleApplication1\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

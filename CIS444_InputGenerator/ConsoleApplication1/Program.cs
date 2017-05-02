@@ -8,7 +8,7 @@ using System.IO;
 
 
 
-namespace ConsoleApplication1
+namespace InputFileGen
 {
 
     static class Constants
