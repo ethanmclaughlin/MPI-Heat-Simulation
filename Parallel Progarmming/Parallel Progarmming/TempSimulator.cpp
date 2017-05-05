@@ -103,19 +103,34 @@ void average(double room[SIZE_OF_ARRAY][SIZE_OF_ARRAY])
 }
 */
 
+
+const int SIZE_OF_ARRAY = 10;
+int length = 10;
+int width = 10;
+
+void print(float room[SIZE_OF_ARRAY][SIZE_OF_ARRAY], int length, int width) {
+
+	for (int row = 0; row < length; row++)
+	{
+		for (int column = 0; column < width; column++)
+		{
+			cout << room[row][column] << "\t ";
+		}
+		cout << endl;
+	}
+
+}
+
+
 int main() {
 	
-	float P1Temp;
-	float P2Temp;
-	float P3Temp;
-	float P4Temp;
-	float P5Temp;
-	float NewTemp;
+	float NewTemp = 0.0;
+	float room[SIZE_OF_ARRAY][SIZE_OF_ARRAY];
 	
 	//Use dynamic array
 
 
-	
+	/*
 	string line;
 
 	ifstream inputfile("input.txt");
@@ -129,117 +144,128 @@ int main() {
 	}
 
 	else cout << "Unable to open file";
-	
+	*/
 
-	//point room[SIZE_OF_ARRAY][SIZE_OF_ARRAY];
+	
 	cout << "Temp simulator" << endl;
 	cout << endl;
 	cout << "Printing initial temp..." << endl;
-	//initial(room);
-	//print(room);
 
-
-	int room[10][10];
 	//float formula = P1Temp + ((P2Temp - P1Temp) * .01);
 
 	//populate initial grid
-	for (int row = 0; row < room[10][10]; row++)
+	for (int row = 0; row < SIZE_OF_ARRAY; row++)
 	{
-		for (int column = 0; column < room[10][10]; column++)
+		for (int column = 0; column < SIZE_OF_ARRAY; column++)
 		{
 			if (row == 0 || row == 9)
 			{
 				if (column == 0 || column == 9)
 				{
-					room[row][column] = 0;
+					room[row][column] = 50;
+					//room[row][column] = (row + 1)*(column + 1);
 				}
 				else
 				{
-					room[row][column] = 0;
+					room[row][column] = 50;
 				}
 			}
 			else
 			{
-				room[row][column] = 0;
+				room[row][column] = 50;
 			}
 		}
 	}
 
 	//print initial grid
-	for (int row = 0; row < 10; row++)
-	{
-		for (int column = 0; column < 10; column++)
-		{
-			cout << room[row][column] << " ";
-		}
-		cout << endl;
-	}
+	print(room, length, width);
+
+
 	
-	int temp;
+	double temp;
 
 	cout << "Enter temperture: ";
 	cin >> temp;
 
-	//First iteration
-	for (int row = 0; row < room[10][10]; row++)
+	//user input
+	room[0][8] = temp;
+
+
+	//Print final grid
+	//print(room, length, width);
+
+	for (int test = 0; test < 10; test++)
 	{
-		for (int column = 0; column < room[10][10]; column++)
+
+		//First iteration
+		for (int row = 0; row < 10; row++)
 		{
-			//top or bottom row
-			if (row == 0 || row == 9)
+			for (int column = 0; column < 10; column++)
 			{
-				//first or last column
-				if (column == 0 || column == 9)
+				//top or bottom row
+				if (row == 0 || row == 9)
 				{
-					//Corner formula
-					//P1Temp +((P2Temp - P1Temp) * .01) + ((P3Temp - P1Temp) * .01)
-					//NewTemp = room[row][column] + ((room[row][column + 1] - room[row][column]) * .01) + ((room[row + 1][column] - room[row][column]) * .01);
-					
-					//Top Right Corner
-					NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row + 1][column] - room[row][column]) * .01);
-					//Bottom Left Corner
-					NewTemp = room[row][column] + ((room[row][column + 1] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01);
-					//Bottom Right Corner
-					NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01);
+					//first or last column
+					if (column == 0 || column == 9)
+					{
+						//Corner formula
+						//P1Temp +((P2Temp - P1Temp) * .01) + ((P3Temp - P1Temp) * .01)
+						//NewTemp = room[row][column] + ((room[row][column + 1] - room[row][column]) * .01) + ((room[row + 1][column] - room[row][column]) * .01);
+
+						//user input
+						//room[0][0] = temp;
+
+						//Top Right Corner
+						NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row + 1][column] - room[row][column]) * .01);
+						room[row][column - 1] = NewTemp;
+						cout << NewTemp << endl;
+						//Bottom Left Corner
+						NewTemp = room[row][column] + ((room[row][column + 1] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01);
+						cout << NewTemp << endl;
+						//Bottom Right Corner
+						NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01);
+						cout << NewTemp << endl;
+					}
+					else
+					{
+						//Edge formula
+						//P1Temp +((P2Temp - P1Temp) * .01) + ((P3Temp - P1Temp) * .01) + ((P4Temp - P1Temp) * .01)
+
+						//Top Edge
+						NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row][column + 1] - room[row][column]) * .01)
+							+ ((room[row + 1][column] - room[row][column]) * .01);
+						cout << NewTemp << endl;
+						//Left Edge
+						NewTemp = room[row][column] + ((room[row - 1][column] - room[row][column]) * .01) + ((room[row][column + 1] - room[row][column]) * .01)
+							+ ((room[row + 1][column] - room[row][column]) * .01);
+						cout << NewTemp << endl;
+						//Right Edge
+						NewTemp = room[row][column] + ((room[row - 1][column] - room[row][column]) * .01) + ((room[row][column - 1] - room[row][column]) * .01)
+							+ ((room[row + 1][column] - room[row][column]) * .01);
+						cout << NewTemp << endl;
+						//Bottom Edge
+						NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01)
+							+ ((room[row][column + 1] - room[row][column]) * .01);
+						cout << NewTemp << endl;
+					}
 				}
 				else
 				{
-					//Edge formula
-					//P1Temp +((P2Temp - P1Temp) * .01) + ((P3Temp - P1Temp) * .01) + ((P4Temp - P1Temp) * .01)
-
-					//Top Edge
+					//Middle formula
+					//P1Temp +((P2Temp - P1Temp) * .01) + ((P3Temp - P1Temp) * .01) + ((P4Temp - P1Temp) * .01) + ((P5Temp - P1Temp) * .01)
 					NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row][column + 1] - room[row][column]) * .01)
-						+ ((room[row + 1][column] - room[row][column]) * .01);
-					//Left Edge
-					NewTemp = room[row][column] + ((room[row - 1][column] - room[row][column]) * .01) + ((room[row][column + 1] - room[row][column]) * .01)
-						+ ((room[row + 1][column] - room[row][column]) * .01);
-					//Right Edge
-					NewTemp = room[row][column] + ((room[row - 1][column] - room[row][column]) * .01) + ((room[row][column - 1] - room[row][column]) * .01)
-						+ ((room[row + 1][column] - room[row][column]) * .01);
-					//Bottom Edge
-					NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01)
-						+ ((room[row][column + 1] - room[row][column]) * .01);
+						+ ((room[row + 1][column] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01);
+					cout << NewTemp << endl;
 				}
 			}
-			else
-			{
-				//Middle formula
-				//P1Temp +((P2Temp - P1Temp) * .01) + ((P3Temp - P1Temp) * .01) + ((P4Temp - P1Temp) * .01) + ((P5Temp - P1Temp) * .01)
-				NewTemp = room[row][column] + ((room[row][column - 1] - room[row][column]) * .01) + ((room[row][column + 1] - room[row][column]) * .01)
-					+ ((room[row + 1][column] - room[row][column]) * .01) + ((room[row - 1][column] - room[row][column]) * .01);
-			}
 		}
 	}
+	cout << NewTemp << endl;
 
 	//Print final grid
-	for (int row = 0; row < 10; row++)
-	{
-		for (int column = 0; column < 10; column++)
-		{
-			cout << room[row][column] << " ";
-		}
-		cout << endl;
-	}
+	print(room, length, width);
+
+	cout << NewTemp << endl;
 
 
 	system("PAUSE");
