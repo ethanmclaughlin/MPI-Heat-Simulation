@@ -110,8 +110,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="TempDispersion.cpp" />
     <ClCompile Include="TempSimulator.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="TempSimulator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

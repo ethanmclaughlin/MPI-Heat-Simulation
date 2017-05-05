@@ -3,46 +3,52 @@
 #include <string>
 #include <cmath>
 #include <fstream>
-#define X 8
-#define T 5
+#include<vector>
+#include <stdlib.h>
+#include "TempSimulator.h"
+
+#define filepath "C:\\Users\\ethan\\Desktop\\inputfile.txt"
 
 using namespace std;
-/*
+
 struct point
 {
-	double Temp;
-	int X_loc;
-	int Y_loc;
+	float Temp;
 	bool IS_static;
 };
 
-  
-const int SIZE_OF_ARRAY = 10;
-*/
-/*
-void initial(point room[SIZE_OF_ARRAY][SIZE_OF_ARRAY]) {
-	for (int row = 0; row < SIZE_OF_ARRAY; row++)
-	{
-		for (int colomn = 0; colomn < SIZE_OF_ARRAY; colomn++)
-		{
-			if (row == 0 || row == 9)
-			{
-				if (colomn == 0 || colomn == 9)
-				{
-					room[row][colomn];
-				}
-				else
-				{
-					room[row][colomn];
-				}
+
+vector<vector<point>> initial(vector<float> temperatures, int X_dim, int Y_dim) {
+
+	vector<vector<point>> initial_grid;
+
+	vector<vector<float>> temps_2D;
+
+	temps_2D = vector<vector<float>>(X_dim, vector<float>(Y_dim));
+
+	initial_grid = vector<vector<point>>(X_dim, vector<point>(Y_dim));
+
+	for (int k = 0; k < temperatures.size(); k++) {
+		temps_2D[k / X_dim][k % X_dim] = temperatures[k];
+		string x = to_string(temps_2D[k / X_dim][k % X_dim]);
+		cout << x << endl;
+	}
+
+	for (int i = 0; i < X_dim; i++) {
+		for (int j = 0; j < Y_dim; j++) {
+			point temp;
+			if (i == 0 && j == 0) {
+				temp.IS_static = true;
 			}
-			else
-			{
-				room[row][colomn];
+			else {
+				temp.IS_static = false;
 			}
+			temp.Temp = temps_2D[j][i];		
+			initial_grid[j][i] = temp;
 		}
 	}
-}*/
+	return initial_grid;
+}
 
 /*
 void print(double room[SIZE_OF_ARRAY][SIZE_OF_ARRAY]) {
@@ -103,35 +109,73 @@ void average(double room[SIZE_OF_ARRAY][SIZE_OF_ARRAY])
 }
 */
 
-int main() {
-	
-	float P1Temp;
-	float P2Temp;
-	float P3Temp;
-	float P4Temp;
-	float P5Temp;
-	float NewTemp;
-	
-	//Use dynamic array
-
-
-	
+vector<string> file_reader() {	
 	string line;
+	int counter = 0;
 
-	ifstream inputfile("input.txt");
+	ifstream inputfile;
+	inputfile.open(filepath);
+
 	if (inputfile.is_open())
-	{
-		while (getline(inputfile, line))
-		{
-			cout << line << '\n';
+	{		
+		vector<string> input_data(counter);
+		
+		while (getline(inputfile, line)) {
+			input_data.push_back(line);
+			cout << "added " << line << " to vector \n";
 		}
 		inputfile.close();
+		cout << "added all data to vector!\n";
+		return input_data;
+		
+		
 	}
+	else cout << "Unable to open file";	
+}
 
-	else cout << "Unable to open file";
+int main() {
+
+	float NewTemp;
+
+	int X_dim, Y_dim, iterations;
+	float multiplier;
+	float temp;
+	//Use dynamic array
+
+	vector<string> input_data = file_reader();
+
+	X_dim = stoi(input_data[0]);
+	cout << input_data[0] << endl;
+	Y_dim = stoi(input_data[1]);
+	cout << input_data[1] << endl;
+	iterations = stoi(input_data[2]);
+	cout << input_data[2] << endl;
+	multiplier = stof(input_data[3]);
+	cout << input_data[3] << endl << endl;
+
+	vector<float> temperatures;
 	
 
-	//point room[SIZE_OF_ARRAY][SIZE_OF_ARRAY];
+	for (int i = 4; i < input_data.size(); i++) {
+			cout << input_data[i] << endl;
+			temp = stof(input_data[i]);
+				
+	}
+
+	cout << endl;
+
+	vector<vector<point>> initial_grid = initial(temperatures, X_dim, Y_dim);
+
+	for (int i = 0; i < X_dim; i++) {
+		for (int j = 0; j < Y_dim; j++) {
+			cout << initial_grid[j][i].Temp << endl;
+		}
+	}
+
+	system("PAUSE");
+
+}
+	/*point room[SIZE_OF_ARRAY][SIZE_OF_ARRAY];
 	cout << "Temp simulator" << endl;
 	cout << endl;
 	cout << "Printing initial temp..." << endl;
@@ -163,10 +207,10 @@ int main() {
 				room[row][column] = 0;
 			}
 		}
-	}
+	}*/
 
 	//print initial grid
-	for (int row = 0; row < 10; row++)
+	/*for (int row = 0; row < 10; row++)
 	{
 		for (int column = 0; column < 10; column++)
 		{

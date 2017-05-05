@@ -1,0 +1,6 @@
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\ethan\Documents\GitHub\MPI-Heat-Simulation\CIS444_InputGenerator\ConsoleApplication1\obj\Debug\InputFileGen.csprojResolveAssemblyReference.cache
